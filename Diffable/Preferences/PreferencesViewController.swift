@@ -10,7 +10,7 @@ enum Section: CaseIterable, Hashable {
     var numberOfItem: [String] {
         switch self {
         case .backupRestore:
-            return ["데이터 백업", "데이터 복원"]
+            return ["백업 및 복원"]
         case .support:
             return ["문의하기", "리뷰 남기기"]
         case .Information:
@@ -23,7 +23,7 @@ enum Section: CaseIterable, Hashable {
         case .backupRestore:
             return "데이터"
         case .support:
-            return "고객센터"
+            return "지원"
         case .Information:
             return "정보"
         }
@@ -78,12 +78,12 @@ extension PreferencesViewController {
             cell.accessories = indexPath.section == self?.dataSource.indexPath(for: Section.Information.numberOfItem[0])?.section ? [] : [.disclosureIndicator()]
         }
         
-        // header
-        //        let headerRegistration = UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView, elementKind, indexPath in
-        //            var content = UIListContentConfiguration.groupedHeader()
-        //            content.text = "\(Section.allCases[indexPath.section].header)"
-        //            supplementaryView.contentConfiguration = content
-        //        }
+         //header
+        let headerRegistration = UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView, elementKind, indexPath in
+            var content = UIListContentConfiguration.groupedHeader()
+            content.text = "\(Section.allCases[indexPath.section].header)"
+            supplementaryView.contentConfiguration = content
+        }
         
         // footer
         let footerRegistration = UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind: UICollectionView.elementKindSectionFooter) { supplementaryView, elementKind, indexPath in
@@ -99,9 +99,9 @@ extension PreferencesViewController {
         
         dataSource.supplementaryViewProvider = { collectionView, elementKind, indexPath in
             
-            return collectionView.dequeueConfiguredReusableSupplementary(using: footerRegistration, for: indexPath)
+            //return collectionView.dequeueConfiguredReusableSupplementary(using: footerRegistration, for: indexPath)
             
-            //return elementKind == UICollectionView.elementKindSectionHeader ? collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath) : collectionView.dequeueConfiguredReusableSupplementary(using: footerRegistration, for: indexPath)
+            return elementKind == UICollectionView.elementKindSectionHeader ? collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath) : collectionView.dequeueConfiguredReusableSupplementary(using: footerRegistration, for: indexPath)
             
         }
     }
@@ -140,10 +140,13 @@ extension PreferencesViewController: UICollectionViewDelegate {
         guard let item = self.dataSource.itemIdentifier(for: indexPath) else { return }
         
         switch item {
-        case Section.backupRestore.numberOfItem[0] : // 데이터 백업
+        case Section.backupRestore.numberOfItem[0] : // 백업 및 복원
             print(item)
-        case Section.backupRestore.numberOfItem[1] : // 데이터 복원
-            print(item)
+            
+            let dataViewController = BackupAndRestoreViewController()
+            self.present(dataViewController, animated: true)
+//        case Section.backupRestore.numberOfItem[1] : // 데이터 복원
+//            print(item)
         case Section.support.numberOfItem[0] : // 문의하기
             print(item)
             sendFeedback()

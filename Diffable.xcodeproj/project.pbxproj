@@ -18,6 +18,8 @@
 		147654AC29012F0B004D55EA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147654AB29012F0B004D55EA /* BaseView.swift */; };
 		147654B12901306D004D55EA /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147654B02901306D004D55EA /* PreferencesView.swift */; };
 		147654B329013075004D55EA /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147654B229013075004D55EA /* PreferencesViewController.swift */; };
+		14D0C8EF2903C39400FB75C9 /* BackupAndRestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0C8EE2903C39400FB75C9 /* BackupAndRestoreView.swift */; };
+		14D0C8F12903C39F00FB75C9 /* BackupAndRestoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0C8F02903C39F00FB75C9 /* BackupAndRestoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		147654AB29012F0B004D55EA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		147654B02901306D004D55EA /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		147654B229013075004D55EA /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		14D0C8EE2903C39400FB75C9 /* BackupAndRestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupAndRestoreView.swift; sourceTree = "<group>"; };
+		14D0C8F02903C39F00FB75C9 /* BackupAndRestoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupAndRestoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		14D89AD529023527002F2A35 /* BackupAndRestore */ = {
 			isa = PBXGroup;
 			children = (
+				14D0C8F02903C39F00FB75C9 /* BackupAndRestoreViewController.swift */,
+				14D0C8EE2903C39400FB75C9 /* BackupAndRestoreView.swift */,
 			);
 			path = BackupAndRestore;
 			sourceTree = "<group>";
@@ -182,11 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D0C8F12903C39F00FB75C9 /* BackupAndRestoreViewController.swift in Sources */,
 				1476549729012E8F004D55EA /* ViewController.swift in Sources */,
 				147654B12901306D004D55EA /* PreferencesView.swift in Sources */,
 				147654AA29012F07004D55EA /* BaseViewController.swift in Sources */,
 				147654AC29012F0B004D55EA /* BaseView.swift in Sources */,
 				1476549329012E8F004D55EA /* AppDelegate.swift in Sources */,
+				14D0C8EF2903C39400FB75C9 /* BackupAndRestoreView.swift in Sources */,
 				147654B329013075004D55EA /* PreferencesViewController.swift in Sources */,
 				1476549529012E8F004D55EA /* SceneDelegate.swift in Sources */,
 			);
